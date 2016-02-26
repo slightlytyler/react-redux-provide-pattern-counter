@@ -27,7 +27,7 @@ count.actions = {
     return (dispatch, getState) => {
       dispatch({
         type: INCREMENT_COUNT,
-        increment: getState().count * 2
+        increment: getState().count
       });
     };
   },
