@@ -1,8 +1,9 @@
 import React from 'react';
+import Counter from './Counter';
 
 const App = () => (
   <div>
-    Test
+    <Counter />
   </div>
 );
 

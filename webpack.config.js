@@ -2,7 +2,11 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: [
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    './src/index'
+  ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -14,13 +18,10 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /.js?$/,
-        loader: 'babel-loader',
+        test: /\.js$/,
+        loaders: ['react-hot', 'babel'],
         exclude: /node_modules/,
-        include: __dirname,
-        query: {
-          presets: ['es2015', 'react']
-        }
+        include: __dirname
       }
     ]
   }
